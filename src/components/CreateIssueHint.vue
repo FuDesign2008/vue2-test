@@ -1,15 +1,15 @@
 <template>
-    <div>TODO</div>
+  <div>TODO</div>
 </template>
 <script>
 import Vue from 'vue'
 
-export Vue.extend({
+export default Vue.extend({
   props: {
-      value: {
-        type: Boolean,
-        required: true
-      },
+    value: {
+      type: Boolean,
+      required: true,
+    },
   },
 
   data() {
@@ -23,21 +23,21 @@ export Vue.extend({
       handler(value) {
         this.show = value
       },
-      immediate: true
+      immediate: true,
     },
   },
 
   methods: {
     onCreateQualityIssue() {
       this.$emit('create', {
-        isSafety: false
+        isSafety: false,
       })
       this.hide()
     },
 
     onCreateSafetyIssue() {
       this.$emit('create', {
-        isSafety: true
+        isSafety: true,
       })
       this.hide()
     },
@@ -49,10 +49,8 @@ export Vue.extend({
     hide() {
       this.$emit('input', false)
       this.show = false
-    }
+    },
   },
-
 })
-
 </script>
-<style lang="less" scoped> </style>
+<style lang="less" scoped></style>
